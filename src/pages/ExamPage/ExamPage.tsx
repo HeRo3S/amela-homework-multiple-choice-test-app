@@ -1,105 +1,32 @@
 import {
   Box,
-  Button,
   Checkbox,
   FormControlLabel,
   Grid,
-  LinearProgress,
   Typography,
-  styled,
 } from "@mui/material";
 import { useEffect, useState } from "react";
-import ExamPageMockData from "../mockData/ExamPageMockData";
-import ExamAppbar from "../components/exam/Appbar";
-import DummyToolbar from "../components/common/DummyToolbar";
-import ExamDrawer from "../components/exam/Drawer";
+import ExamPageMockData from "../../mockData/ExamPageMockData";
+import ExamAppbar from "../../components/exam/Appbar";
+import DummyToolbar from "../../components/common/DummyToolbar";
+import ExamDrawer from "../../components/exam/Drawer";
 import DialogQuestionGroupButtons, {
   StyledQuestionButton,
-} from "../components/exam/DialogQuestionGroupButtons";
-import StyledSpecialButton from "../components/common/SpecialButton";
-
-const LocalCSSValues = {
-  TestInfoContainerHeight: "165px",
-  DrawerWidth: "289px",
-};
-
-const MainContainer = styled(Grid)(({ theme }) => ({
-  backgroundColor: "#c4c4c4",
-  // height: "100%",
-}));
-
-const QuestionButtonsGroupContainer = styled(Grid)(({ theme }) => ({
-  backgroundColor: "#d9d9d9",
-  border: "solid 1px",
-  display: "flex",
-  flexDirection: "column",
-
-  [theme.breakpoints.down("md")]: {
-    display: "none",
-  },
-}));
-
-const TestInfoContainer = styled(Grid)(({ theme }) => ({
-  padding: "10px 15px",
-  backgroundColor: "#d9d9d9",
-  // height: LocalCSSValues.TestInfoContainerHeight,
-  border: "solid 1px",
-  [theme.breakpoints.down("md")]: {
-    border: "none",
-    backgroundColor: "#c4c4c4",
-    paddingBottom: "0px",
-  },
-}));
-
-const StyledTestTitle = styled(Typography)(({ theme }) => ({
-  height: "61px",
-  display: "flex",
-  alignItems: "center",
-
-  [theme.breakpoints.down("md")]: {
-    display: "none",
-  },
-}));
-
-const StyledTimeLeftText = styled(Typography)(({ theme }) => ({
-  height: "40px",
-  display: "flex",
-  alignItems: "center",
-}));
-
-const StyledLinearProgress = styled(LinearProgress)({
-  margin: "10px 0",
-  height: "21px",
-  backgroundColor: "#c4c4c4",
-  "& .MuiLinearProgress-bar": {
-    backgroundColor: "#41c54e",
-  },
-});
-
-const StyledQuestionContainer = styled(Grid)(({ theme }) => ({
-  height: `calc(100% - ${LocalCSSValues.TestInfoContainerHeight})`,
-  padding: "0 20px",
-  display: "grid",
-  gridTemplateRows: "3fr 6fr 4fr",
-}));
-
-const StyledNavButtonsContainer = styled(Grid)({
-  justifySelf: "flex-end",
-  padding: "20px 20px",
-  alignItems: "flex-end",
-});
-
-const StyledNavButton = styled(Button)({
-  backgroundColor: "#eee7a9",
-  fontWeight: "700",
-});
-
-const StyledMoveToQuestionButtonContainer = styled(Grid)(({ theme }) => ({
-  justifyContent: "center",
-  [theme.breakpoints.up("md")]: {
-    display: "none",
-  },
-}));
+} from "../../components/exam/DialogQuestionGroupButtons";
+import StyledSpecialButton from "../../components/common/SpecialButton";
+import {
+  LocalCSSValues,
+  MainContainer,
+  QuestionButtonsGroupContainer,
+  StyledLinearProgress,
+  StyledMoveToQuestionButtonContainer,
+  StyledNavButton,
+  StyledNavButtonsContainer,
+  StyledQuestionContainer,
+  StyledTestTitle,
+  StyledTimeLeftText,
+  TestInfoContainer,
+} from "./ExamPage.style";
 
 export default function ExamPage() {
   const [timeLeftPercentage, setTimeLeftPercentage] = useState(100);

@@ -1,80 +1,25 @@
 import { useState } from "react";
-import ManagerDrawer from "../components/manager/ManagerDrawer";
-import ManagerAppBar from "../components/manager/ManagerAppbar";
+import ManagerDrawer from "../../components/manager/ManagerDrawer";
+import ManagerAppBar from "../../components/manager/ManagerAppbar";
 import {
   Box,
   Breadcrumbs,
-  Button,
   Grid,
   Link,
   Pagination,
   Typography,
-  styled,
 } from "@mui/material";
-import DummyToolbar from "../components/common/DummyToolbar";
-import { ManagerSearchBar } from "../components/manager/ManagerSearchBar";
-import AccountInfoCard from "../components/manager/AccountInfoCard";
+import DummyToolbar from "../../components/common/DummyToolbar";
+import { ManagerSearchBar } from "../../components/manager/ManagerSearchBar";
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
-import QuestionInfoCard from "../components/manager/QuestionInfoCard";
-
-const LocalCSSProperties = {
-  drawerWidth: "289px",
-};
-
-const StyledMainContainer = styled(Box)(({ theme }) => ({
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  width: `calc(100% - ${LocalCSSProperties.drawerWidth})`,
-  minHeight: "100vh",
-  backgroundColor: "#c4c4c4",
-  flex: 1,
-}));
-
-const StyledContentContainer = styled(Box)(({ theme }) => ({
-  display: "grid",
-  gridTemplateRows: "1fr 1fr 7fr",
-  flexDirection: "column",
-  flex: "1",
-  width: "90%",
-  maxWidth: "816px",
-
-  [theme.breakpoints.down("md")]: {
-    gridTemplateRows: "1fr 8fr",
-  },
-}));
-
-const StyledPageTitleContainer = styled(Box)(({ theme }) => ({
-  display: "flex",
-  alignItems: "center",
-  [theme.breakpoints.down("md")]: {
-    display: "none",
-  },
-}));
-
-const StyledNewUserButton = styled(Button)(({ theme }) => ({
-  width: "100%",
-  height: "73px",
-  display: "flex",
-  flexDirection: "row",
-  justifyContent: "center",
-  border: "solid 1px",
-  borderRadius: "4px",
-
-  "& *": {
-    flexGrow: 1,
-  },
-  [theme.breakpoints.down("md")]: {
-    border: "none",
-    backgroundColor: "#c4c4c4",
-    "& p": {
-      display: "none",
-    },
-    "& svg": {
-      height: "100%",
-    },
-  },
-}));
+import QuestionInfoCard from "../../components/manager/QuestionInfoCard";
+import {
+  LocalCSSProperties,
+  StyledContentContainer,
+  StyledMainContainer,
+  StyledNewUserButton,
+  StyledPageTitleContainer,
+} from "./QuestionManager.style";
 
 export default function QuestionManager() {
   const [isMobileDrawerOpen, setIsMobileDrawerOpen] = useState(false);

@@ -1,35 +1,6 @@
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  Typography,
-  styled,
-} from "@mui/material";
-import StyledSpecialButton from "../components/common/SpecialButton";
-
-const PageContainer = styled(Box)({
-  display: "flex",
-  width: "100vw",
-  height: "100vh",
-  alignItems: "center",
-  justifyContent: "center",
-  backgroundColor: "#c4c4c4",
-});
-
-const MainContainer = styled(Box)({
-  display: "grid",
-  flexDirection: "column",
-  gridTemplateRows: "1fr 3fr 2fr",
-  width: "60%",
-  height: "50%",
-  padding: "10px 20px",
-  backgroundColor: "#d9d9d9",
-
-  "& *": {
-    alignSelf: "center",
-  },
-});
+import { Grid, Typography } from "@mui/material";
+import StyledSpecialButton from "../../components/common/SpecialButton";
+import { MainContainer, PageContainer } from "./ExamFinish.style";
 
 export default function ExamFinish() {
   return (

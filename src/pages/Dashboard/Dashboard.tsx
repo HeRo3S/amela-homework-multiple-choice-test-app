@@ -1,63 +1,19 @@
-import {
-  Box,
-  Button,
-  Grid,
-  Menu,
-  MenuItem,
-  Pagination,
-  styled,
-} from "@mui/material";
-import SubjectCard from "../components/dashboard/SubjectCard";
-import DashboardDrawer from "../components/dashboard/Drawer";
+import { Box, Grid, Menu, MenuItem, Pagination } from "@mui/material";
+import SubjectCard from "../../components/dashboard/SubjectCard";
+import DashboardDrawer from "../../components/dashboard/Drawer";
 import { useState } from "react";
-import { SearchBar } from "../components/dashboard/SearchBar";
+import { SearchBar } from "../../components/dashboard/SearchBar";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import DashboardAppbar from "../components/dashboard/Appbar";
-import DummyToolbar from "../components/common/DummyToolbar";
-
-const drawerWidth = "289px";
-
-const StyledMainContainer = styled(Box)(({ theme }) => ({
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  width: `calc(100% - ${drawerWidth})`,
-  minHeight: "1024px",
-  backgroundColor: "#c4c4c4",
-  flex: 1,
-}));
-
-const UtilityBarContainer = styled(Grid)({
-  margin: "20px 0",
-  width: `calc(95%)`,
-  "& .MuiGrid-item": {
-    padding: "0 10px",
-  },
-});
-
-const StyledDifficultyButtonGridContainer = styled(Grid)(({ theme }) => ({
-  [theme.breakpoints.down("md")]: {
-    display: "none",
-  },
-}));
-
-const StyledDifficultyButton = styled(Button)({
-  minWidth: "200px",
-  width: "auto",
-  height: "73px",
-  display: "flex",
-  flexDirection: "row",
-  alignItems: "center",
-  border: "solid 1px",
-  borderRadius: "4px",
-});
-
-const StyledCardsContainer = styled(Grid)(({ theme }) => ({
-  padding: "50px 0",
-  width: `calc(90%)`,
-  minHeight: "787px",
-  backgroundColor: "#d9d9d9",
-}));
+import DashboardAppbar from "../../components/dashboard/Appbar";
+import DummyToolbar from "../../components/common/DummyToolbar";
+import {
+  LocalCssProperties,
+  StyledMainContainer,
+  UtilityBarContainer,
+  StyledDifficultyButtonGridContainer,
+  StyledDifficultyButton,
+  StyledCardsContainer,
+} from "./Dashboard.style";
 
 export default function Dashboard() {
   const [isMobileDrawerOpen, setIsMobileDrawerOpen] = useState(false);
@@ -82,7 +38,7 @@ export default function Dashboard() {
     <Box sx={{ display: "flex", flexDirection: "row" }}>
       <DashboardAppbar onClickDrawerButton={onClickMobileDrawerButton} />
       <DashboardDrawer
-        width={drawerWidth}
+        width={LocalCssProperties.drawerWidth}
         isMobileOpen={isMobileDrawerOpen}
         onCloseMobile={onCloseMobileDrawer}
       ></DashboardDrawer>
