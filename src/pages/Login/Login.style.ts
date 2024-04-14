@@ -9,28 +9,30 @@ import {
 } from "@mui/material";
 import backgroundImg from "../../assets/loginBG.png";
 
-export const BackgroundContainer = styled(Box)(({ theme }) => ({
+export const BackgroundContainer = styled(Grid)(({ theme }) => ({
   position: "relative",
   backgroundImage: `url(${backgroundImg})`,
   backgroundSize: "cover",
-  backgroundPosition: "center",
-  width: "1440px",
-  height: "1024px",
-  flexShrink: 0,
 
-  [theme.breakpoints.down("sm")]: {
+  backgroundPosition: "contain",
+  width: "100vw",
+  height: "100vh",
+
+  [theme.breakpoints.down("md")]: {
     position: "relative",
-    width: "1028px",
-    height: "782px",
-    top: "-75px",
-    left: "-40px",
+    width: "auto",
   },
 }));
 
+export const GridLoginPopupContainer = styled(Grid)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+}));
+
 export const LoginPopup = styled(Grid)(({ theme }) => ({
-  position: "absolute",
-  top: "155px",
-  left: "749px",
+  // position: "absolute",
+  paddingTop: "90px",
   width: "590px",
   height: "752px",
   display: "flex",
@@ -45,9 +47,10 @@ export const LoginPopup = styled(Grid)(({ theme }) => ({
     top: "-89px",
   },
 
+  [theme.breakpoints.down("md")]: {
+    transform: "scale(0.8)",
+  },
   [theme.breakpoints.down("sm")]: {
-    top: "210px",
-    left: "0px",
     transform: "scale(0.6)",
   },
 }));
