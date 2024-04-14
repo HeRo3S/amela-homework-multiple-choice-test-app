@@ -1,4 +1,4 @@
-import { Box, Card, Grid, Rating, Typography, styled } from "@mui/material";
+import { Card, Grid, Rating, Typography, styled } from "@mui/material";
 import TimerOutlinedIcon from "@mui/icons-material/TimerOutlined";
 import ScoreOutlinedIcon from "@mui/icons-material/ScoreOutlined";
 
@@ -12,7 +12,9 @@ const StyledCard = styled(Card)({
 });
 
 const StyledGridContainer = styled(Grid)({
-  padding: "0px 10px",
+  padding: "10px 12px",
+  display: "grid",
+  gridTemplateRows: "1fr 2fr 2fr",
 });
 
 export default function SubjectCard() {
